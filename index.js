@@ -1,14 +1,18 @@
-/*const express = require('express');
+const express = require('express');
 const app = express();
 
-app.get('/',(req, res) => res.send("hola Mundo"));
-app.listen(4000);
-console.log("Server on port ",4000);*/
+
+console.log("Server on port ",4000);
 
 const net = require('net');
-const port= process.env.PORT || 4000;
+const port= process.env.PORT || 5500;
 const server = net.createServer()
-
+app.get('/',(req, res) => {
+    const ipAddress = req.header('x-forwarded-for') ||  			
+						req.socket.remoteAddress;
+                        res.send(ipAddress);                    
+});
+app.listen(4000);
 server.on('connection', (socket)=>{
     socket.on('data', (data)=>{
         console.log('\nEl cliente ' + socket.remoteAddress + ":" + socket.remotePort + " dice: " + data)
