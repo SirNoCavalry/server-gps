@@ -5,7 +5,7 @@ app.get('/',(req, res) => {const ipAddress = IP.address();res.send(ipAddress)});
 app.listen(4001);
 console.log("Server on port ",4001);
 
-const net = require('net');
+/*const net = require('net');
 const port= process.env.PORT || 5500;
 const server = net.createServer()
 
@@ -25,4 +25,4 @@ server.on('connection', (socket)=>{
 })
 server.listen(port, ()=>{
     console.log('servidor esta escuchando en la puerta', server.address().port)
-})
+})*/
