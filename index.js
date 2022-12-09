@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const IP = require('ip');
 app.get('/',(req, res) => {const ipAddress = IP.address();res.send(ipAddress)});
-app.listen(4000);
-console.log("Server on port ",4000);
+app.listen(4001);
+console.log("Server on port ",4001);
 
 const net = require('net');
 const port= process.env.PORT || 5500;
