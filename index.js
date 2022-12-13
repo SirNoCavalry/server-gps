@@ -1,9 +1,18 @@
 const express = require('express');
 const app = express();
-const IP = require('ip');
+const port = process.env.PORT || 5500;
+app.listen(port, (err) => {
+
+    if (err) throw new Error(err);
+
+    console.log(`Servidor corriendo en puerto ${ port }`);
+    
+
+})
+/*const IP = require('ip');
 app.get('/',(req, res) => {const ipAddress = IP.address();res.send(ipAddress)});
 app.listen(4001);
-console.log("Server on port ",4001);
+console.log("Server on port ",4001);*/
 
 /*const net = require('net');
 const port= process.env.PORT || 5500;
